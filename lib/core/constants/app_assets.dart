@@ -12,4 +12,3 @@ class AppAssets {
   static const String cart = 'assets/icons/cart.svg';
   static const String welcomePng = 'assets/images/welcome.png';
 }
-

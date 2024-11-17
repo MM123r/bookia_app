@@ -14,34 +14,31 @@ class SocialLoginButtons extends StatelessWidget {
       children: [
         Expanded(
             child: Container(
-              height: 56,
-              //padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
-                borderRadius: BorderRadius.circular(8)
-              ),
+                height: 56,
+                //padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.whiteColor),
+                    borderRadius: BorderRadius.circular(8)),
                 child: SvgPicture.asset('assets/images/Facebook.svg'))),
         //
         const Gap(10),
-         Expanded(
+        Expanded(
             child: Container(
-              height: 56,
-              //padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
-                borderRadius: BorderRadius.circular(8)
-              ),
+                height: 56,
+                //padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.whiteColor),
+                    borderRadius: BorderRadius.circular(8)),
                 child: SvgPicture.asset('assets/images/Google.svg'))),
         //
         const Gap(10),
-         Expanded(
+        Expanded(
             child: Container(
-              height: 56,
-             // padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
-                borderRadius: BorderRadius.circular(8)
-              ),
+                height: 56,
+                // padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.whiteColor),
+                    borderRadius: BorderRadius.circular(8)),
                 child: SvgPicture.asset('assets/images/Apple.svg'))),
       ],
     );

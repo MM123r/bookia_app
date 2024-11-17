@@ -13,19 +13,18 @@ class RepasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-  leading: Padding(
-    padding: const EdgeInsets.only(left: 12),
-    child: IconButton(
-      icon: SvgPicture.asset(
-        AppAssets.backArrow, 
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12),
+          child: IconButton(
+            icon: SvgPicture.asset(
+              AppAssets.backArrow,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
       ),
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
-    ),
-  ),
-),
-
 
       //body
       body: Padding(
@@ -37,15 +36,16 @@ class RepasswordScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                "Forgot Password?",
-                style: getfont30TextStyle(
-                    color: AppColors.darkColor, fontsize: 25),
-              ),
-               Text(
-                "Don't worry! It occurs. Please enter the email address linked with your account.",
-                style: getfont16TextStyle(
-                    color: AppColors.greyColor,),
-              ),
+                    "Forgot Password?",
+                    style: getfont30TextStyle(
+                        color: AppColors.darkColor, fontsize: 25),
+                  ),
+                  Text(
+                    "Don't worry! It occurs. Please enter the email address linked with your account.",
+                    style: getfont16TextStyle(
+                      color: AppColors.greyColor,
+                    ),
+                  ),
                 ],
               ),
               const Gap(15),
@@ -55,20 +55,15 @@ class RepasswordScreen extends StatelessWidget {
                 ),
               ),
 
-              
-
-              
-              
               const Gap(20),
 
               CustomButton(
                 text: "Send Code",
                 onPressed: () {},
               ),
-              
+
               const Gap(210),
 
-              
               //
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

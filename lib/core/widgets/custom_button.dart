@@ -1,9 +1,6 @@
-
-
 import 'package:bookia_app/core/utils/colors.dart';
 import 'package:bookia_app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
-
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -15,7 +12,7 @@ class CustomButton extends StatelessWidget {
     this.textColor,
     required this.onPressed,
   });
-  
+
   final double width;
   final double height;
   final Color? bgcolor;
@@ -46,6 +43,3 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
-
-
-

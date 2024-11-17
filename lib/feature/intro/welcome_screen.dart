@@ -3,6 +3,7 @@ import 'package:bookia_app/core/functions/navigation.dart';
 import 'package:bookia_app/core/utils/text_styles.dart';
 import 'package:bookia_app/core/widgets/custom_button.dart';
 import 'package:bookia_app/core/widgets/outlin_button.dart';
+import 'package:bookia_app/feature/auth/presentation/pages/Register_screen.dart';
 import 'package:bookia_app/feature/auth/presentation/pages/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,7 +47,9 @@ class WelcomeScreen extends StatelessWidget {
               const Gap(10),
               OutlinButton(
                 text: "Register",
-                onPressed: () {},
+                onPressed: () {
+                  pushTo(context, RegisterScreen());
+                },
               )
             ],
           ),
