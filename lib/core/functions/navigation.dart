@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
 
-pushTo(BuildContext context, Widget newscreen) {
-  Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) {
-      return newscreen;
-    }),
-  );
+pushTo(BuildContext context, Widget newScreen) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+    return newScreen;
+  }));
 }
 
-pushWithReplacment(BuildContext context, Widget newscreen) {
-  Navigator.of(context).pushReplacement(
-    MaterialPageRoute(builder: (context) {
-      return newscreen;
-    }),
-  );
+pushWithReplacement(BuildContext context, Widget newScreen) {
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+    return newScreen;
+  }));
 }
 
-
-pushAndRemoveUntil(BuildContext context, Widget newscreen) {
+pushAndRemoveUntil(BuildContext context, Widget newScreen) {
   Navigator.of(context).pushAndRemoveUntil(
-    MaterialPageRoute(builder: (context) {
-      return newscreen;
-    }), (route) =>false );
+      MaterialPageRoute(builder: (context) => newScreen), (route) => false);
 }

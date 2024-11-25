@@ -1,37 +1,47 @@
 import 'package:bookia_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-TextStyle getfont30TextStyle(
-    {double? fontsize, Color? color, FontWeight? fontweight}) {
+TextStyle getFont30TextStyle(
+    {double? fontSize, Color? color, FontWeight? fontWeight}) {
   return TextStyle(
-      fontSize: fontsize ?? 30, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 30,
+    color: color ?? AppColors.darkColor,
+  );
 }
 
-TextStyle getfont24TextStyle(
-    {double? fontsize, Color? color, FontWeight? fontweight}) {
+TextStyle getFont24TextStyle(
+    {double? fontSize, Color? color, FontWeight? fontWeight}) {
   return TextStyle(
-      fontSize: fontsize ?? 24, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 24,
+    color: color ?? AppColors.darkColor,
+  );
 }
 
-TextStyle getfont20TextStyle({double? fontsize, Color? color}) {
+TextStyle getFont20TextStyle(
+    {double? fontSize, Color? color, FontWeight? fontWeight}) {
   return TextStyle(
-      fontSize: fontsize ?? 20, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 20,
+    color: color ?? AppColors.greyColor,
+  );
 }
 
-TextStyle getfont18TextStyle(
-    {double? fontsize, Color? color, FontWeight? fontweight}) {
+TextStyle getFont18TextStyle({double? fontSize, Color? color}) {
   return TextStyle(
-      fontSize: fontsize ?? 18, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 18,
+    color: color ?? AppColors.darkColor,
+  );
 }
 
-TextStyle getfont16TextStyle(
-    {double? fontsize, Color? color, FontWeight? fontweight}) {
+TextStyle getFont16TextStyle({double? fontSize, Color? color}) {
   return TextStyle(
-      fontSize: fontsize ?? 16, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 16,
+    color: color ?? AppColors.darkColor,
+  );
 }
 
-TextStyle getfont14TextStyle(
-    {double? fontsize, Color? color, FontWeight? fontweight}) {
+TextStyle getFont14TextStyle({double? fontSize, Color? color}) {
   return TextStyle(
-      fontSize: fontsize ?? 14, color: color ?? AppColors.darkColor);
+    fontSize: fontSize ?? 14,
+    color: color ?? AppColors.darkColor,
+  );
 }
