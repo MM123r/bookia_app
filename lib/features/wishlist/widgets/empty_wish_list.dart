@@ -24,7 +24,7 @@ class EmptyWishList extends StatelessWidget {
           const Gap(20),
           Text(
             "No books in wishlist",
-            style: getFont18TextStyle(),
+            style: getFont18TextStyle(context,),
           )
         ],
       ),

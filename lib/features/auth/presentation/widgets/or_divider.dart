@@ -13,7 +13,7 @@ class OrDivider extends StatelessWidget {
       children: [
         const Expanded(child: Divider()),
         Text('   Or Login with   ',
-            style: getFont14TextStyle(color: AppColors.darkGreyColor)),
+            style: getFont14TextStyle(context,color: AppColors.darkGreyColor)),
         const Expanded(child: Divider()),
       ],
     );

@@ -8,8 +8,9 @@ import 'package:bookia_app/features/home/data/models/get_sliders_reponse/get_sli
 class HomeRepo {
   static Future<GetArrivalsBooksResponse?> getNewArrivalsBooks() async {
     try {
-      var response =
-          await DioProvider.get(endpoint: AppEndpoints.newArrivalsBooks);
+      var response = await DioProvider.get(
+          endpoint:
+              "/products-bestseller"); //  endpoint: AppEndpoints.newArrivalsBooks
       if (response.statusCode == 200) {
         return GetArrivalsBooksResponse.fromJson(response.data);
       } else {

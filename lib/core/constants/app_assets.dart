@@ -11,6 +11,9 @@ class AppAssets {
   static const String cart = 'assets/icons/cart.svg';
   static const String welcomebg = "assets/images/welcome.png";
   static const String removeSvg = "assets/icons/remove.svg";
+  static const String facebookeSvg = 'assets/images/facebook.svg';
+  static const String appleSvg = 'assets/images/apple.svg';
+  
 
-  // assets\icons\remove.svg
+  
 }

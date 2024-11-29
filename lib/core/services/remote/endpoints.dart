@@ -22,4 +22,17 @@ class AppEndpoints {
   static const String removFromCart = "/remove-from-cart";
 
   static const String getCart = "/cart";
+
+  static const String updateCart = "/update-cart";
+
+  // checkout
+  static const String checkout = "/checkout";
+
+  // placeOrder
+  static const String placeOrder = "/place-order";
+
+  // Profile
+  static const String getProfile = "/profile";
+
+  static const String updateProfile = "/update-profile";
 }

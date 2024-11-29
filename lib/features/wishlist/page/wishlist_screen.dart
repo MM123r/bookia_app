@@ -8,7 +8,6 @@ import 'package:bookia_app/features/wishlist/widgets/wish_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class WishlistScreen extends StatefulWidget {
   @override
   State<WishlistScreen> createState() => _WishlistScreenState();
@@ -26,24 +25,28 @@ class _WishlistScreenState extends State<WishlistScreen> {
     return BlocConsumer<HomeBloc, HomeState>(
       listener: (context, state) {
         if (state is GetWishlistLoadingState ||
+            state is AddToCartLoadingState ||
             state is RemoveFromWishListlsLoadingState) {
           showLoadingDialog(context);
-        } else if(state is GetWishlistLoadedState){
+        } else if (state is GetWishlistLoadedState) {
           Navigator.pop(context);
-        } 
-        else if (
-            state is RemoveFromWishListlsLoadedState) {
+        } else if (state is RemoveFromWishListlsLoadedState) {
           Navigator.pop(context);
           context.read<HomeBloc>().add(GetWishListlsEvent());
+        } else if (state is AddToCartLoadedState) {
+          Navigator.pop(context);
+          showSuccessDialog(context, "Added To Cart");
         }
       },
       builder: (context, state) {
         var wishlist = context.read<HomeBloc>().wishlist;
         return Scaffold(
           appBar: AppBar(
-            title: const Text(
-              "Wishlis",
-              textAlign: TextAlign.center,
+            title: Center(
+              child: const Text(
+                "Wishlist",
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           body: wishlist.isEmpty
@@ -65,7 +68,11 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 context.read<HomeBloc>().add(RemoveFromWishListlsEvent(
                     productId: wishlist[index].id ?? 0));
               },
-              onAddToCart: () {},
+              onAddToCart: () {
+                context
+                    .read<HomeBloc>()
+                    .add(AddToCartEvent(productId: wishlist[index].id ?? 0));
+              },
             );
           },
           separatorBuilder: (context, index) {

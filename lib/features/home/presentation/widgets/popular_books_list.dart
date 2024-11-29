@@ -41,7 +41,7 @@ class _PopularBooksListState extends State<PopularBooksList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('New Arrival Books', style: getFont24TextStyle()),
+                Text('New Arrival Books', style: getFont24TextStyle(context,)),
                 const Gap(10),
                 GridView.builder(
                   shrinkWrap: true,
@@ -109,7 +109,7 @@ class GridBookItem extends StatelessWidget {
           const Gap(10),
           Text(
             book.name ?? '',
-            style: getFont16TextStyle(),
+            style: getFontBook16TextStyle(context,),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
@@ -117,18 +117,25 @@ class GridBookItem extends StatelessWidget {
           Row(
             children: [
               Text(
-                '${book.priceAfterDiscount?.toStringAsFixed(1)} EGP',
-                style: getFont14TextStyle(),
+                '${book.priceAfterDiscount?.toStringAsFixed(1)} \$',
+                style: getFontBook16TextStyle(context,),
               ),
               const Gap(10),
-              Expanded(
-                child: CustomButton(
-                    bgColor: AppColors.darkColor,
-                    height: 30,
-                    radius: 4,
-                    text: 'Buy',
-                    onPressed: () {}),
-              )
+
+              // Expanded(
+              //   child: CustomButton(
+              //        bgColor: AppColors.primaryColor,
+              //        height: 30,
+              //        radius: 4,
+              //       text: 'Buy',
+              //       textColor: AppColors.whiteColor,
+              //       onPressed: () {}
+              //       ),
+              // ),
+
+              Text("Buy",style: getFontBook16TextStyle(context,),)
+            
+             
             ],
           )
         ],

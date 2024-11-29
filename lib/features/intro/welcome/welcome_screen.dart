@@ -35,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 'Order Your Book Now!',
-                style: getFont18TextStyle(),
+                style: getFont18TextStyle(context,),
               ),
               const Spacer(
                 flex: 5,

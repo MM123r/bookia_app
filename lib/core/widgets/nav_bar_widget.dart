@@ -2,12 +2,14 @@ import 'package:bookia_app/core/constants/app_assets.dart';
 import 'package:bookia_app/core/utils/colors.dart';
 import 'package:bookia_app/features/cart/page/cart_screen.dart';
 import 'package:bookia_app/features/home/presentation/page/home_screen.dart';
+import 'package:bookia_app/features/profile/presentation/page/profile_view.dart';
 import 'package:bookia_app/features/wishlist/page/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class NavBarWidget extends StatefulWidget {
   const NavBarWidget({super.key});
+  final int? preIndex = 0;
 
   @override
   State<NavBarWidget> createState() => _NavBarWidgetState();
@@ -15,18 +17,25 @@ class NavBarWidget extends StatefulWidget {
 
 class _NavBarWidgetState extends State<NavBarWidget> {
   int currentPage = 0;
+
+  void initState() {
+    super.initState();
+
+    currentPage = widget.preIndex ?? 0;
+  }
+
   List<Widget> pages = [
     const HomeScreen(),
     WishlistScreen(),
-     CartScreen(),
-    const Center(child: Text('Profile')),
+    CartScreen(),
+    const ProfileView()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentPage],
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: AppColors.whiteColor,
+          backgroundColor: Theme.of(context).colorScheme.onSecondary,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.darkColor,
           showSelectedLabels: false,

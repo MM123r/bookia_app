@@ -8,7 +8,7 @@ showErrorDialog(BuildContext context, String message) {
       backgroundColor: AppColors.redColor,
       content: Text(
         message,
-        style: getFont16TextStyle(color: AppColors.whiteColor),
+        style: getFont16TextStyle(context,color: AppColors.whiteColor),
       )));
 }
 
@@ -17,7 +17,7 @@ showSuccessDialog(BuildContext context, String message) {
       backgroundColor: AppColors.primaryColor,
       content: Text(
         message,
-        style: getFont16TextStyle(color: AppColors.whiteColor),
+        style: getFont16TextStyle(context,color: AppColors.whiteColor),
       )));
 }
 

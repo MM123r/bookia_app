@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
-class EmptyWishList extends StatelessWidget {
-  const EmptyWishList({
+class EmptyCart extends StatelessWidget {
+  const EmptyCart({
     super.key,
   });
 
@@ -17,14 +17,14 @@ class EmptyWishList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset(
-            AppAssets.home,
+            AppAssets.cart,
             color: AppColors.primaryColor,
             width: 80,
           ),
           const Gap(20),
           Text(
-            "No books in wishlist",
-            style: getFont18TextStyle(),
+            "No books in cart",
+            style: getFont18TextStyle(context,),
           )
         ],
       ),

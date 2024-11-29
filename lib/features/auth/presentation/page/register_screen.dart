@@ -10,6 +10,7 @@ import 'package:bookia_app/features/auth/data/model/request/user_model_params.da
 import 'package:bookia_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:bookia_app/features/auth/presentation/bloc/auth_event.dart';
 import 'package:bookia_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:bookia_app/features/auth/presentation/page/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,7 +56,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   Text(
                     'Hello! Register to get started',
-                    style: getFont30TextStyle(),
+                    style: getFont30TextStyle(
+                      context,
+                    ),
                   ),
                   const Gap(32),
                   TextFormField(
@@ -150,14 +153,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     children: [
                       Text(
                         'Already have an account?',
-                        style:
-                            getFont16TextStyle(color: AppColors.darkGreyColor),
+                        style: getFont14TextStyle(context,
+                            color: AppColors.darkGreyColor),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            pushTo(context, const LoginScreen());
+                          },
                           child: Text(
-                            'Sign in',
-                            style: getFont16TextStyle(
+                            'Login',
+                            style: getFont16TextStyle(context,
                                 color: AppColors.primaryColor),
                           ))
                     ],

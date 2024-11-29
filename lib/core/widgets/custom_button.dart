@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
               text,
               style:
-                  getFont16TextStyle(color: textColor ?? AppColors.whiteColor),
+                  getFont16TextStyle(context,color: textColor ?? AppColors.whiteColor,),
             )));
   }
 }

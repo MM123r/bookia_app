@@ -31,8 +31,7 @@ class _BookDetalisScreenState extends State<BookDetalisScreen> {
         } else if (state is AddToWishListlsLoadedState) {
           Navigator.pop(context);
           showSuccessDialog(context, "Added To WishList");
-        }
-        else if (state is AddToCartLoadedState) {
+        } else if (state is AddToCartLoadedState) {
           Navigator.pop(context);
           showSuccessDialog(context, "Added To Cart");
         }
@@ -55,15 +54,15 @@ class _BookDetalisScreenState extends State<BookDetalisScreen> {
               children: [
                 Text(
                   widget.product.priceAfterDiscount.toString() + "\$",
-                  style: getFont24TextStyle(),
+                  style: getFont24TextStyle(context,),
                 ),
                 const Gap(24),
                 Expanded(
                     child: CustomButton(
                         text: "Add to Cart",
                         onPressed: () {
-                          context.read<HomeBloc>().add(
-                            AddToCartEvent(productId: widget.product.id ?? 0));
+                          context.read<HomeBloc>().add(AddToCartEvent(
+                              productId: widget.product.id ?? 0));
                         }))
               ],
             ),
@@ -88,17 +87,17 @@ class _BookDetalisScreenState extends State<BookDetalisScreen> {
                 Text(
                   widget.product.name ?? "",
                   textAlign: TextAlign.center,
-                  style: getFont30TextStyle(),
+                  style: getFont30TextStyle(context,),
                 ),
                 const Gap(10),
                 Text(
                   widget.product.category ?? "",
-                  style: getFont16TextStyle(color: AppColors.primaryColor),
+                  style: getFont16TextStyle(context,color: AppColors.primaryColor),
                 ),
                 const Gap(16),
                 Text(
                   widget.product.description ?? "",
-                  style: getFont14TextStyle(),
+                  style: getFont14TextStyle(context,),
                 ),
               ],
             ),

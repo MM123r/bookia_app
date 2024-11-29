@@ -1,4 +1,4 @@
-import 'package:bookia_app/features/cart/data/models/get_cart_response/get_cart_response.dart';
+import 'package:bookia_app/features/cart/data/models/response/get_cart_response/get_cart_response.dart';
 import 'package:bookia_app/features/cart/data/repo/cart_repo.dart';
 import 'package:bookia_app/features/home/data/models/get_arrivals_books_response/product.dart';
 import 'package:bookia_app/features/home/data/models/get_sliders_reponse/slider.dart';
@@ -15,10 +15,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     on<GetWishListlsEvent>(getwishlis);
     on<AddToWishListlsEvent>(addTowishlis);
+    on<RemoveFromWishListlsEvent>(removFromwishlis);
 
     on<AddToCartEvent>(addToCart);
     on<RemoveFromCartEvent>(removFromCart);
     on<GetCartEvent>(getCart);
+
+    on<UpdateCartEvent>(updateCart);
+
+    on<CheckoutEvent>(checkout);
+
+    on<PlaceOrderEvent>(placeOrder); 
+  // on<PlaceOrderEvent>(placeorder);
+    
   }
 
   List<Product> newArrivalsBooks = [];
@@ -142,7 +151,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-
   Future<void> addToCart(AddToCartEvent event, Emitter<HomeState> emit) async {
     emit(AddToCartLoadingState());
 
@@ -165,7 +173,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(RemoveFromCartLoadingState());
 
     try {
-      await CartRepo.removFromCart(productId: event.productId).then((value) {
+      await CartRepo.removFromCart(cartIemId: event.cartItemId).then((value) {
         if (value) {
           emit(RemoveFromCartLoadedState());
         } else {
@@ -177,4 +185,82 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeErrorState(message: 'Unexpected Error occur, please try again'));
     }
   }
+
+  Future<void> updateCart(
+      UpdateCartEvent event, Emitter<HomeState> emit) async {
+    emit(UpdateCartLoadingState());
+
+    try {
+      await CartRepo.updateCartItemQuantity(
+        cartItemId: event.cartItemId,
+        quantity: event.quantity,
+      ).then((value) {
+        if (value != null) {
+          cartResponse = value;
+          emit(UpdateCartLoadedState());
+        } else {
+          emit(HomeErrorState(
+              message: 'Unexpected Error occur, please try again'));
+        }
+      });
+    } on Exception {
+      emit(HomeErrorState(message: 'Unexpected Error occur, please try again'));
+    }
+  }
+
+  Future<void> checkout(CheckoutEvent event, Emitter<HomeState> emit) async {
+    emit(CheckoutLoadingState());
+
+    try {
+      await CartRepo.checkout().then((value) {
+        if (value) {
+          emit(CheckoutLoadedState());
+        } else {
+          emit(HomeErrorState(
+              message: 'Unexpected Error occur, please try again'));
+        }
+      });
+    } on Exception {
+      emit(HomeErrorState(message: 'Unexpected Error occur, please try again'));
+    }
+  }
+
+  Future<void> placeOrder(
+      PlaceOrderEvent event, Emitter<HomeState> emit) async {
+    emit(PlaceOrderLoadingState());
+
+    try {
+      await CartRepo.placeOrder(params: event.params).then((value) {
+        if (value == true) {
+          emit(PlaceOrderLoadedState());
+        } else {
+          emit(HomeErrorState(
+              message: 'Unexpected Error occur, please try again'));
+        }
+      });
+    } on Exception {
+      emit(HomeErrorState(message: 'Unexpected Error occur, please try again'));
+    }
+  }  
+
+
+  // code yosry
+
+// Future<void> placeorder(PlaceOrderEvent event, Emitter<HomeState> emit) async {
+//   emit(PlaceOrderLoadingState());
+//   try {
+//     final value = await CartRepo.placeOrder(params: event.params);
+//     if (value == true) {
+//       emit(CheckoutLoadedState());
+//     } else {
+//       emit(HomeErrorState(message: 'Order placement failed, please try again.'));
+//     }
+//   } on Exception catch (e) {
+//     emit(HomeErrorState(message: 'Unexpected Error occurred: $e'));
+//   }
+// }
+
+
+
+
 }

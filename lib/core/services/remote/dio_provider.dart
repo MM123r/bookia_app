@@ -12,7 +12,7 @@ class DioProvider {
 
   static Future<Response> get(
       {required String endpoint,
-      Map<String, dynamic>? data,
+      Object? data,
       Map<String, dynamic>? headers}) async {
     return await _dio.get(endpoint,
         data: data, options: Options(headers: headers));
@@ -20,7 +20,7 @@ class DioProvider {
 
   static Future<Response> post(
       {required String endpoint,
-      Map<String, dynamic>? data,
+      Object? data,
       Map<String, dynamic>? headers}) async {
     return await _dio.post(endpoint,
         data: data, options: Options(headers: headers));
@@ -28,7 +28,7 @@ class DioProvider {
 
   static Future<Response> put(
       {required String endpoint,
-      Map<String, dynamic>? data,
+      Object? data,
       Map<String, dynamic>? headers}) async {
     return await _dio.put(endpoint,
         data: data, options: Options(headers: headers));
@@ -36,7 +36,7 @@ class DioProvider {
 
   static Future<Response> delete(
       {required String endpoint,
-      Map<String, dynamic>? data,
+      Object? data,
       Map<String, dynamic>? headers}) async {
     return await _dio.delete(endpoint,
         data: data, options: Options(headers: headers));

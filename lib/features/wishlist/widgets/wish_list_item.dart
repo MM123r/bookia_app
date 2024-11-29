@@ -41,7 +41,7 @@ class WishListItem extends StatelessWidget {
                   Expanded(
                       child: Text(
                     product.name ?? "",
-                    style: getFont18TextStyle(),
+                    style: getFont18TextStyle(context,),
                   )),
                   const Gap(5),
                   GestureDetector(
@@ -52,7 +52,7 @@ class WishListItem extends StatelessWidget {
               const Gap(10),
               Text(
                 "${product.priceAfterDiscount ?? product.price} \$",
-                style: getFont16TextStyle(),
+                style: getFont16TextStyle(context,),
               ),
               Row(
                 children: [

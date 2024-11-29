@@ -32,15 +32,29 @@ class GetCartLoadingState extends HomeState {}
 
 class GetCartLoadedState extends HomeState {}
 
+class UpdateCartLoadingState extends HomeState {}
+
+class UpdateCartLoadedState extends HomeState {}
 
 class RemoveFromCartLoadingState extends HomeState {}
 
 class RemoveFromCartLoadedState extends HomeState {}
 
-
 class AddToCartLoadingState extends HomeState {}
 
 class AddToCartLoadedState extends HomeState {}
+
+// Checkout
+
+class CheckoutLoadingState extends HomeState {}
+
+class CheckoutLoadedState extends HomeState {}
+
+// PlaceOrder
+
+class PlaceOrderLoadingState extends HomeState {}
+
+class PlaceOrderLoadedState extends HomeState {}
 
 class HomeErrorState extends HomeState {
   String message;

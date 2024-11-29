@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 10),
             Text(
               'Order Your Book Now!',
-              style: getFont18TextStyle(),
+              style: getFont18TextStyle(context,),
             )
           ],
         ),

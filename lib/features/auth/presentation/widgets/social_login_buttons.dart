@@ -1,3 +1,4 @@
+import 'package:bookia_app/core/constants/app_assets.dart';
 import 'package:bookia_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,37 +15,39 @@ class SocialLoginButtons extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            height: 56,
-            padding: const EdgeInsets.all(15),
+            height: 70,
+            width: 70,
+           // padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.borderColor),
+             // border: Border.all(color: AppColors.primaryColor),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: SvgPicture.asset('assets/images/google.svg'),
+            child: SvgPicture.asset("assets/images/Apple.svg"),
           ),
         ),
         const Gap(10),
         Expanded(
           child: Container(
             height: 56,
-            padding: const EdgeInsets.all(15),
+            width: 105,
+            //padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.borderColor),
+              //border: Border.all(color: AppColors.primaryColor),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: SvgPicture.asset('assets/images/facebook.svg'),
+            child: SvgPicture.asset("assets/images/Facebook.svg"),
           ),
         ),
         const Gap(10),
         Expanded(
           child: Container(
-            height: 56,
-            padding: const EdgeInsets.all(15),
+            
+            //padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.borderColor),
-              borderRadius: BorderRadius.circular(8),
+             // border: Border.all(color: AppColors.primaryColor),
+             borderRadius: BorderRadius.circular(8),
             ),
-            child: SvgPicture.asset('assets/images/apple.svg'),
+            child: SvgPicture.asset("assets/images/Google.svg"),
           ),
         )
       ],

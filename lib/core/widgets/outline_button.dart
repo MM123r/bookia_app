@@ -36,7 +36,7 @@ class CustomOutlineButton extends StatelessWidget {
             child: Text(
               text,
               style:
-                  getFont16TextStyle(color: textColor ?? AppColors.darkColor),
+                  getFont16TextStyle(context,color: textColor ?? AppColors.darkColor),
             )));
   }
 }
